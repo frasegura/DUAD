@@ -1,0 +1,45 @@
+A) Cree un algoritmo para ver un video en Youtube. Sea lo más especifico posible:
+
+    1)Inicio
+
+    2)Si tiene computadora
+
+        a)Ingresar a youtube.com
+
+    3)Si tiene celular, o tablet o smart Tv:
+
+        b)Ingresar a la aplicacion de youtube.
+
+    4) Si sabe el nombre del video que desea ver :
+
+        a)Ir a la barra buscar.
+
+        b)Escribir el nombre del video que desea ver.
+
+        c)Presionar el boton de buscar.
+
+    5)Sino sabe el nombre del video:
+
+        a)Ir a la barra buscar.
+
+        b)Escribir el nombre del canal asociado al video.
+
+        c)Presionar el boton de buscar.
+
+        d)Mientras no encuentre el video:
+
+        i)Seguir navegando por el canal asociado al video.
+
+    6)Sino:
+
+        a)Buscar por medio de categorias relacionadas al video que desea ver.
+
+        b)Mientras no encuentre el video:
+
+            i)Seguir buscando dentro de las categorias asociadas al video.
+
+    7)Seleccionar el video que desea ver.
+
+    8) Reproducir el video seleccionado.
+
+    9)Fin

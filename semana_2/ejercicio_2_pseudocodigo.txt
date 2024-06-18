@@ -1,0 +1,29 @@
+Dado un `tiempo en segundos`, calcule si es menor o mayor a 10 minutos.
+
+    1. Si es menor, muestre cuantos segundos faltarían para llegar a 10 minutos.
+    2. *Ejemplos*:
+        1. 1040 → Mayor
+        2. 140 → 160
+
+    1. Inicio
+    2. Definir `tiempo_segundos`
+    3. Definir `diferencia`
+    4. Definir `minutos`
+    5. Definir `segundos`
+    6. `tiempo_segundos` = 0
+    7. `diferencia` = 0
+    8. `minutos`= 0
+    9. `segundos` = 0
+    10. Mostrar “Ingrese el tiempo en segundos”
+    11. Pedir  `tiempo_segundos`  // 200 seg ,    800 seg
+    12. `minutos` = `tiempo_segundos` / 60   /// 200/60 = 3.33 min     ,  800/60 = 13.33 min
+    13. Si(`minutos` < 10 ) entonces:  // 3.33 <10  
+        1. `diferencia` = 10 - `minutos`  // 10- 3.33 = 6.67
+        2. Mostrar “El tiempo registrado es  menor a 10 minutos ”
+        3. `segundos` = `diferencia`* 60  //  6.67 * 60 = 400.2 seg
+        4. Mostrar “La cantidad de segundos que le faltan para llegar a los 10 minutos es de”  //400.2s
+        5. Mostrar `segundos`
+    14. Sino  // 13.33 > 10
+        1. Mostrar “El tiempo registrado es  mayor a 10 minutos”
+    15. FinSi
+    16. Fin

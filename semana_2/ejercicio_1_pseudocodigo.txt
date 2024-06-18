@@ -1,0 +1,26 @@
+Dado un `precio de un producto`, calcular el descuento y mostrar el precio final tomando en cuenta que:
+
+    1. Si el precio es menor a 100, el descuento es del 2%.
+    2. Si el precio es mayor o igual a 100, el descuento es del 10%.
+    3. *Ejemplos*:
+        1. 120 → 108
+        2. 40 → 39.2
+
+    1. Inicio
+    2. Definir `precio_de_producto`
+    3. Definir `descuento`
+    4. Definir `precio_final`
+    5. `precio_de_producto` = 0
+    6. `descuento` = 0
+    7. `precio_final` = 0
+    8. Mostrar “Ingrese el precio del producto”
+    9. Pedir `precio_de_producto` // 120  ,  40
+    10. Si (`precio_de_producto`< 100) entonces :
+        1. `descuento` = `precio_producto`*0.02 // descuento = 40*0.02 → descuento = 0.8
+    11. Sino
+        1. `descuento` = `precio_producto`*0.10 // descuento = 120*0.10 → descuento = 12
+    12. FinSi
+    13. `precio_final` = `precio_producto` - `descuento` //  precio_final = 120-12 → 108 se guarda en precio final ,  precio_final = 40-0.8 → 39.2 que se guardaria en precio final
+    14. Mostrar “El precio final del producto con descuento es”
+    15. Mostrar `precio_final`
+    16. Fin

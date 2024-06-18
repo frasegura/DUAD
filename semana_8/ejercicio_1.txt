@@ -1,0 +1,20 @@
+1)Lea sobre el resto de métodos de la clase File de Python [aquí](https://www.w3schools.com/python/python_ref_file.asp) y cree una tabla donde explique qué hace cada uno.
+
+| Método | Descripción |
+| --- | --- |
+| read() | Lee y retorna todo el contenido del archivo o el especificado |
+| readlines() | Devuelve todas las lineas de un archivo |
+| readline() | Devuelve una linea del archivo, y  se puede espcificar cuantos bytes de la linea devolver usando el parametro  ‘size’ |
+| readable() | Comprueba si un archivo es legible o no devolviendo true or false |
+| write() | Permite escribir un texto especifico en el archivo |
+| writable() | Compruena si en un archivo se puede escribir o no devolviendo true or false y no tiene parametros |
+| writelines() | Permite escribir los elementos de una lista dada en el archivo |
+| close() | Permite cerrar el archivo |
+| detach() | Devuleve la secuencia sin procesar del archivo |
+| fileno() | Devuelve el descriptor del archivo dado por el sistema en forma de un numero entero |
+| flush() | Limpia el buffer interno |
+| isatty() | Devuelve true or false dependiendo si el archivo es interactivo o no |
+| seek() | Devuelve la nueva poscion (asignada) del archivo |
+| seekable() | Devuelve true or false  de acuerdo a si el archivo se puede buscar o no |
+| tell() | Devuelve la posicion actual de un archivo |
+| truncate() | Permite cambiar el tamano del archivo en bytes , en caso de dejarla por defecto ‘None’ se usa la posicion actual |
