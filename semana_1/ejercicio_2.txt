@@ -1,0 +1,103 @@
+B) Algoritmo que describa su rutina diaria. Use  condiciones, condiciones multiples y ciclos.
+
+    1)Inicio
+
+    2)Levantarse
+
+    3)Si tengo agua en la botella
+
+        a)Tomar agua
+
+    4)Sino, rellenar la botella de agua.
+
+    5)Ordenar la cama.
+
+    6)Sacar a mis mascotas para orinar.
+
+    7)Mientras no hayan orinado :
+
+        a)Esperar que terminen.
+
+    8)Servirle agua y comida a mis mascotas.
+
+    9)Preparar cafe.
+
+    10)Ducharme.
+
+    11)Servirme cafe:
+
+        a)Buscar  una taza.
+
+        b)Servir el cafe que vaya a tomar.
+
+    12) Ir a mi escritorio de trabajo.
+
+    13) Encender la computadora.
+
+    14)Si hay correos nuevos o pendientes de revisar:
+
+            a)Revisar correos y pendientes.
+
+    15)Sino :
+
+            a)Empezar con tareas diarias.
+
+    16)Almorzar:
+
+        a)Si hay almuerzo del dia anterior:
+
+            i)Almorzar
+
+        b)Sino:
+
+            i)Preparar almuerzo
+
+    17)Regresar al escritorio de trabajo.
+
+        a)Si hay tareas pendientes:
+
+            i)Continuar con dichas tareas
+
+        b)Sino:
+
+            i)Revisar que todo este al dia.
+
+    18)Si ya es hora de salida y todo esta al dia:
+
+        a)Desconectarme.
+
+    19)Sino : 
+
+        a)Terminar pendientes.
+
+    20)Si tengo clases:
+
+        a)Si son clases virtuales:
+
+            I)Conectarme a clases
+
+        b)Si son presenciales:
+
+            I)Si tengo carro y no hay restriccion de placas:
+
+                i)Ir en carro
+
+        II)Si tengo carro y hay restriccion de placas:
+
+                i)Ir en bus
+
+    21)Sino :
+
+        a)Hacer ejercicio.
+
+        b)Estudiar.
+
+    22)Preparar la cena.
+
+    23) Mientras la cama no este lista:
+
+        a)Ordenar la cama.
+
+    24)Dormir.
+
+    25)Fin
