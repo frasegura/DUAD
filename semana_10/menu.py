@@ -1,14 +1,21 @@
-from actions import create_student
+from actions import create_student,show_all_students,get_top_three_students,get_average_grade_all_students
 
 def check_option(option):
     if not 1 <= option <= 6:
         raise ValueError('Invalid option, you have to select an option within the range from 1 to 6')
+
+
+def check_empty_list(student_info): #ver en preguntas notion
+    if len(student_info) ==  0:
+        raise ValueError('The list is empty')
+
 
 def show_menu():
     option = 0
     proceed = True
     student = dict()
     amount_students= 0
+    student_info = list()
 
     while proceed :
 
@@ -23,13 +30,16 @@ def show_menu():
             check_option(option)
 
             if(option==1):
-                create_student(student,amount_students)
+                student_info =create_student(student,amount_students)
             elif(option == 2):
-                print('show  the information of all students')
+                check_empty_list(student_info)
+                show_all_students(student_info)
             elif(option == 3):
-                print('show the top three students with the best average grade')
+                check_empty_list(student_info)
+                get_top_three_students(student_info)
             elif(option == 4):
-                print('show the average grade of all students.')
+                check_empty_list(student_info)
+                get_average_grade_all_students(student_info)
             elif(option == 5):
                 print('export data to a CSV file')
             elif(option == 6):
