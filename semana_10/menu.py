@@ -1,4 +1,5 @@
 from actions import create_student,show_all_students,get_top_three_students,get_average_grade_all_students
+from data import write_students_in_CSV_file
 
 def check_option(option):
     if not 1 <= option <= 6:
@@ -16,6 +17,8 @@ def show_menu():
     student = dict()
     amount_students= 0
     student_info = list()
+    file_path = r'semana_10\estudiantes.csv'
+    student_headers = ('full_name', 'student_section','spanish_grade','english_grade','social_studies_grade','science_grade','average_grade')
 
     while proceed :
 
@@ -41,10 +44,11 @@ def show_menu():
                 check_empty_list(student_info)
                 get_average_grade_all_students(student_info)
             elif(option == 5):
-                print('export data to a CSV file')
+                check_empty_list(student_info)
+                write_students_in_CSV_file(file_path,student_info,student_headers)
             elif(option == 6):
                 print('import data from CSV file')
-            proceed = input('Do you want to continue (yes/no) : ') == 'yes'
+            proceed = input('Do you want to continue in the menu?(yes/no) : ') == 'yes'
         except Exception as e:
             print(f'An error has ocurred : {e}')
             

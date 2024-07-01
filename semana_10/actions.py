@@ -1,4 +1,5 @@
 
+
 def check_words(name):
     if all( word.isalpha() for word  in name.split() ):
         print('Name captured correctly!')
@@ -58,7 +59,6 @@ def create_student(student,amount_students):
 
 
 def show_all_students(student_info):
-        check_empty_list(student_info)
         print(student_info)
 
     
@@ -78,9 +78,5 @@ def get_average_grade_all_students(student_info):
     print(f'The average grade of all students is : {average_general_grade}')
         
 
-
-
-        
-    
 
 
