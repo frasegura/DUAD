@@ -10,13 +10,18 @@ def check_words(name):
 def check_numbers(number):
     try:
         float(number)
-    except ValueError as e:
-        print(e)
+    except Exception as e:
+        raise ValueError(' Invalid information! you can only enter numbers.')
     
         
 def check_grades(grade):
     if not 0 <= grade <= 100:
         raise ValueError('The grade entered is invalid, it should be in a range between 0 and 100.')
+    
+
+def check_empty_field(field):
+    if not field:
+        raise ValueError('You must enter a value; it cannot be left blank!')
 
 
 def get_average(spanish_grade,english_grade,social_studies_grade,science_grade):
@@ -30,27 +35,38 @@ def create_student(student,amount_students):
     while continue_entering_students:
         try:
             name = input('Please enter the full name of the student:')
+            check_empty_field(name)
             check_words(name)
+
             section = input('Please enter the section of the student:')
+            check_empty_field(section)
 
             spanish_grade = input('Please enter the spanish grade:')
+            check_empty_field(spanish_grade)
             check_numbers(spanish_grade)
             check_grades(float(spanish_grade))
+
             english_grade = input('Please enter the english grade:')
+            check_empty_field(english_grade)
             check_numbers(english_grade)
             check_grades(float(english_grade))
+
             social_studies_grade = input('Please enter the social studies grade:')
+            check_empty_field(social_studies_grade)
             check_numbers(social_studies_grade)
             check_grades(float(social_studies_grade))
+
             science_grade =input('Please enter the science grade:')
+            check_empty_field(science_grade)
             check_numbers(science_grade)
             check_grades(float(science_grade))
+
             average_grade_student = get_average(spanish_grade,english_grade,social_studies_grade,science_grade)
 
             student = {'full_name':name, 'student_section': section,'spanish_grade':spanish_grade,'english_grade':english_grade,'social_studies_grade':social_studies_grade,'science_grade':science_grade,'average_grade':average_grade_student}       
             students_list.append(student)
 
-            amount_students +=1
+            #amount_students +=1
             continue_entering_students = input('Would you like to add other student? (yes/no):') == 'yes' 
             
         except Exception as e:
@@ -75,7 +91,7 @@ def get_average_grade_all_students(student_info):
     for student in student_info:
         sum_general_grade += student['average_grade']
     average_general_grade = sum_general_grade/len(student_info)
-    print(f'The average grade of all students is : {average_general_grade}')
+    print(f'The average grade of all students is : {"{:.2f}".format(average_general_grade)}')
         
 
 

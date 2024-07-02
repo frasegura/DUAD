@@ -1,5 +1,5 @@
 from actions import create_student,show_all_students,get_top_three_students,get_average_grade_all_students
-from data import write_students_in_CSV_file
+from data import write_students_in_CSV_file,read_students_in_csv_file
 
 def check_option(option):
     if not 1 <= option <= 6:
@@ -9,6 +9,12 @@ def check_option(option):
 def check_empty_list(student_info): #ver en preguntas notion
     if len(student_info) ==  0:
         raise ValueError('The list is empty')
+    
+
+def check_proceed_option(input_option):
+    if not input_option == 'yes' or input_option == 'no':
+        raise ValueError("You can only type 'yes' or 'no'.")
+
 
 
 def show_menu():
@@ -47,7 +53,7 @@ def show_menu():
                 check_empty_list(student_info)
                 write_students_in_CSV_file(file_path,student_info,student_headers)
             elif(option == 6):
-                print('import data from CSV file')
+                read_students_in_csv_file(file_path)
             proceed = input('Do you want to continue in the menu?(yes/no) : ') == 'yes'
         except Exception as e:
             print(f'An error has ocurred : {e}')
