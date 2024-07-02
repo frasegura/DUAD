@@ -11,12 +11,6 @@ def check_empty_list(student_info): #ver en preguntas notion
         raise ValueError('The list is empty')
     
 
-def check_proceed_option(input_option):
-    if not input_option == 'yes' or input_option == 'no':
-        raise ValueError("You can only type 'yes' or 'no'.")
-
-
-
 def show_menu():
     option = 0
     proceed = True
