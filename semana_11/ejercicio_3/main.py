@@ -4,3 +4,14 @@
     3. Hay que convertir los objetos a diccionario al exportar a csv.
     4. Hay que modificar el acceso a los keys para accesar a atributos.
         1. student['Name'] → student.name"""
+
+from menu import show_menu
+
+if __name__ == '__main__':
+    try:
+        show_menu()
+    except Exception as e:
+        print(f'An error has ocurred : {e}')
+
+
+        
