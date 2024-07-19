@@ -9,7 +9,10 @@ def check_option(option):
 def check_empty_list(student_info): #ver en preguntas notion
     if len(student_info) ==  0:
         raise ValueError('The list is empty')
-    
+
+def convert_from_obj_to_dict(student_info):
+    dict_list = [vars(student) for student in student_info]
+    return dict_list
 
 def show_menu():
     option = 0
@@ -17,8 +20,8 @@ def show_menu():
     #student = dict()
     amount_students= 0
     student_info = list()
-    file_path = r'semana_10\estudiantes.csv'
-    student_headers = ('full_name', 'student_section','spanish_grade','english_grade','social_studies_grade','science_grade','average_grade')
+    file_path = r'semana_11\ejercicio_3\estudiantes.csv'
+    student_headers = ('name', 'section','spanish_grade','english_grade','social_studies_grade','science_grade','average_grade')
 
     while proceed :
 
@@ -45,9 +48,11 @@ def show_menu():
                 get_average_grade_all_students(student_info)
             elif(option == 5):
                 check_empty_list(student_info)
-                write_students_in_CSV_file(file_path,student_info,student_headers)
+                students_list =convert_from_obj_to_dict(student_info)
+                write_students_in_CSV_file(file_path,students_list,student_headers)
             elif(option == 6):
-                read_students_in_csv_file(file_path)
+                #read_students_in_csv_file(file_path)
+                print('Testing')
             proceed = input('Do you want to continue in the menu?(yes/no) : ') == 'yes'
         except Exception as e:
             print(f'An error has ocurred : {e}')

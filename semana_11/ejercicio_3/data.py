@@ -2,7 +2,7 @@ import csv
 import os
 
 
-#export data to a CSV file -> ***Work on this section to finish ex 3***
+#export data to a CSV file
 def write_students_in_CSV_file(path,student_info,student_headers):
     with open(path,'w',encoding= 'UTF-8') as file:
         writer = csv.DictWriter(file,fieldnames=student_headers)
