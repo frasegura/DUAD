@@ -51,8 +51,8 @@ def show_menu():
                 students_list =convert_from_obj_to_dict(student_info)
                 write_students_in_CSV_file(file_path,students_list,student_headers)
             elif(option == 6):
-                #read_students_in_csv_file(file_path)
-                print('Testing')
+                read_students_in_csv_file(file_path)
+                
             proceed = input('Do you want to continue in the menu?(yes/no) : ') == 'yes'
         except Exception as e:
             print(f'An error has ocurred : {e}')
