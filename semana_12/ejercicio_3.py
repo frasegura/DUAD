@@ -1,0 +1,1 @@
+#Investigue qué usos se le pueden dar a la herencia multiple y cree un ejemplo.
