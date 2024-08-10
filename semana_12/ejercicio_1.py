@@ -28,19 +28,27 @@ class SavingsAccount(BankAccount):
         super().__init__(balance)
         self.min_balance = 500
 
-    def review_balance(self):
-        return self.balance >= self.min_balance
-
     def retirar_dinero(self, amount):
-        #self.balance = self.balance - amount
-        if not self.review_balance():
-            print('The specified amount cannot be withdrawn because your balance is lower than the minimum required balance.')
-        elif self.balance < amount:
-            print('The specified amount cannot be withdrawn because it exceeds your balance.')
-        else:
-            self.balance = self.balance - amount
-            print(f'The amount of money that was withdrawn was: {amount}')
+        if self.balance <= self.min_balance:
+            print('The require amount cannot be withdrawn due to insufficient balance on the account')
+        elif self.balance <= amount:
+            print('The required amount cannot be withdrawn because it exceeds the actual balance in the account.')
 
+
+        else:
+            residual_value = self.balance - amount
+            if residual_value <= self.min_balance:
+                test_value = self.balance - residual_value
+                if test_value >= self.min_balance:
+                    residual_value = self.balance - self.min_balance
+                    print(f' From : {amount } only : {residual_value} can be withdrawn because your account balance is :{self.balance}')
+                    self.balance = self.balance - residual_value
+                else:
+                    print(f'From : {amount } only : {residual_value} can be withdrawn because your account balance is :{self.balance}')
+                    self.balance = self.balance - residual_value
+                
+            else:
+                self.balance = self.balance - amount
 
 def show_menu():
     my_account = SavingsAccount(500)
