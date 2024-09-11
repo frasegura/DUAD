@@ -23,13 +23,13 @@ class Node:
                 else:
                     self.right.insert(data)
 
-def get_sorted_bin_tree(root):
+def print_sorted_bin_tree(root):
     if root is None:
         return
     else:
-        get_sorted_bin_tree(root.left)
+        print_sorted_bin_tree(root.left)
         print(root.data)
-        get_sorted_bin_tree(root.right)
+        print_sorted_bin_tree(root.right)
 
 
 
@@ -38,4 +38,4 @@ if __name__ == '__main__':
     root.insert('c')
     root.insert('a')
 
-    get_sorted_bin_tree(root)
+    print_sorted_bin_tree(root)
