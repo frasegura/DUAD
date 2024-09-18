@@ -1,7 +1,4 @@
 #Crea un bubble_sort por tu cuenta sin revisar el código de la lección.
-
-
-
 def sorted_bubble_sort(new_list):
     for i in range(len(new_list)-1):
         has_made_changes = False
@@ -10,7 +7,8 @@ def sorted_bubble_sort(new_list):
             if new_list[j] > new_list[j+1]:
                 new_list[j] , new_list[j+1] = new_list[j+1], new_list[j]
                 has_made_changes = True
-                #print(f'Position change has been made: {has_made_changes}')
+                print(f'Position change has been made: {has_made_changes}')
+        print(has_made_changes)
 
         if not has_made_changes:
                 return
