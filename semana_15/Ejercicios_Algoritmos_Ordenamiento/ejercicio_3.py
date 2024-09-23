@@ -10,6 +10,9 @@ class Node:
         self.data = data
         self.next = None
 
+class EmptyList(Exception):
+    pass
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -17,8 +20,8 @@ class LinkedList:
 
     def print_structure(self):
         current_node = self.head
-        while current_node is not None:
-            print(current_node.data , end='->')
+        while current_node is not None:           
+            print(current_node.data)
             current_node =  current_node.next
 
     def push(self, new_node):
@@ -33,30 +36,31 @@ class LinkedList:
 
     def sort_list(self):
         if self.head is None:
-            print('The list is empty')
+            raise EmptyList('The list is empty!')
+
         while self.head is not None:
             node_change = False
             current_node = self.head
-            next_node= self.head.next
-            while current_node is not None:
-                print(current_node, next_node)
+            while current_node.next is not None: 
+                next_node = current_node.next  
                 if current_node.data > next_node.data:
                     current_node.data , next_node.data = next_node.data ,current_node.data
                     node_change = True
                 current_node = next_node
-
             if not node_change:
-                break
+                return
 
 
 
 my_list = LinkedList()
-my_list.push(Node(45))
+
 my_list.push(Node(25))
 my_list.push(Node(5))
 my_list.push(Node(1))
 my_list.push(Node(99))
 my_list.print_structure()
+
 my_list.sort_list()
+print('Lista ordenada:')
 my_list.print_structure()
 
