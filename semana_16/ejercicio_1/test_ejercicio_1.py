@@ -1,4 +1,5 @@
 import unittest
+import random
 from  ejercicio_1  import sorted_bubble_sort
 
 class TestBubbleSort(unittest.TestCase):
@@ -16,9 +17,7 @@ class TestBubbleSort(unittest.TestCase):
     def test_sorted_bubble_sort_sort_a_long_list_correctly(self):
         #AAA
         #Arrange
-        new_list = []
-        for i in range(100): #GENERAR NUMEROS RANDOM BUSCAR FUNCION
-            new_list.append(i)    
+        new_list = [random.randint(0,100) for _ in range(100)] #GENERAR NUMEROS RANDOM BUSCAR FUNCION  
         #Act    
         result = sorted_bubble_sort(new_list)
         #Assert

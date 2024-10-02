@@ -12,9 +12,14 @@ def test_get_ordered_empty_string():
     #AAA
     my_input = ''
     result = get_ordered_string(my_input)
-    assert result == ''
+    assert result.strip() == ''
 
 def test_get_ordered_string_already_ordered():
     my_input = 'arriba-boleta-casa-zanahoria'
     result = get_ordered_string(my_input)
     assert result.strip() == 'arriba-boleta-casa-zanahoria'
+
+def test_get_ordered_string_repeated_words():
+    my_input = 'hola-hola-computadora-antena'
+    result = get_ordered_string(my_input)
+    assert result.strip() == 'antena-computadora-hola-hola'
