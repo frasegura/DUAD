@@ -3,11 +3,7 @@ import PySimpleGUI as sg
 import expense_window
 import category_window
 import income_window
-
-"""FALTA: 
-        *datos sean desplegados una vez q se inicie la aplicacion.
-        *notificacion de que se deben ingresar  categorias antes de ingresar un ingreso o gastos
-"""
+from  data import load_data_from_json_file,write_data_to_json_file
 
 #1. Definir temas de color disponibles
 sg.theme('DarkTeal9')
@@ -55,7 +51,17 @@ def expense_submission(table_data, main_window,categories):
 
 def show_main_window():
         table_headings = ['Category','Name','Type','Amount']
-        table_data, categories, incomes_categories , expenses_categories = [],[],[],[]    
+        table_data, categories, incomes_categories , expenses_categories = [],[],[],[]
+
+        info = load_data_from_json_file()
+
+        table_data = info.get('table_data',[])
+        categories = info.get('categories',[])
+        incomes_categories = info.get('incomes_categories',[])
+        expenses_categories = info.get('expenses_categories',[])
+
+        
+
         try:    
                 #2.Definir elementos del layout
                 main_window_layout = [[sg.Text('Welcome to you finance assistent')],
@@ -64,6 +70,7 @@ def show_main_window():
                         ]
                 #3.Configurar la ventana
                 main_window = sg.Window('Personal Finance Management System', main_window_layout, finalize= True)
+
                 #4.Mostrar las demas ventanas y leer eventos
                 while True:
                         event, values = main_window.read()
@@ -80,15 +87,35 @@ def show_main_window():
                                                 if i not in expenses_categories:
                                                         expenses_categories.append(i)
                                                 
-                                
+                                write_data_to_json_file({
+                                        'table_data' : table_data,
+                                        'categories' : categories,
+                                        'income_categories' : incomes_categories,
+                                        'expenses_categories' : expenses_categories
+                                })
+
                         elif event == 'Add Income':
                                 if check_categories(incomes_categories):
                                         income_submission(table_data, main_window,incomes_categories)
-                                
+
+                                write_data_to_json_file({
+                                        'table_data' : table_data,
+                                        'categories' : categories,
+                                        'income_categories' : incomes_categories,
+                                        'expenses_categories' : expenses_categories
+                                })
+
                         elif event == 'Add Expense':
                                 if check_categories(expenses_categories):
                                         expense_submission(table_data, main_window, expenses_categories)
-                                
+
+                                write_data_to_json_file({
+                                        'table_data' : table_data,
+                                        'categories' : categories,
+                                        'income_categories' : incomes_categories,
+                                        'expenses_categories' : expenses_categories
+                                })
+
                 #5.Cerrar la ventana
                 main_window.close()
         except Exception as e:
@@ -98,7 +125,6 @@ def show_main_window():
                 
 
 if __name__ == '__main__':
-        #path = r'Semana_17\table_data.json'
         show_main_window()
 
 
