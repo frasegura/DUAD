@@ -5,11 +5,11 @@ def check_inputs(new_income):
         if i == '':
             raise ValueError('All fields are mandatory')
 
-def add_income():
+def add_income(categories):
         try:
             layout_income = [[sg.Text('INCOMES')],
                             [sg.Text('Category')],
-                            [sg.InputText(key='income_category')],
+                            [sg.Combo(key='income_category',values=categories,auto_size_text =True)],
                             [sg.Text('Name')],
                             [sg.InputText(key='income_name')],
                             [sg.Text('Amount ($)')],

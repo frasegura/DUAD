@@ -1,16 +1,15 @@
 import PySimpleGUI as sg
 
-
 def check_inputs(new_expense):
         for i in new_expense:
                 if i == '':
                     raise ValueError('All fields are mandatory!')
 
-def add_expense():
+def add_expense(categories):
         try:
             layout_expense =[[sg.Text('EXPENSES')],
                             [sg.Text('Category')],
-                            [sg.InputText(key='expense_category')],
+                            [sg.Combo(key='expense_category',values= categories ,auto_size_text =True)],
                             [sg.Text('Name')],
                             [sg.InputText(key='expense_name')],
                             [sg.Text('Amount ($)')],
